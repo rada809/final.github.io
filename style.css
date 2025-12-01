@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #2c3e50; 
+    --secondary-color: #3498db; 
+    --text-color: #ecf0f1; 
+    --bg-color: #f0f4f8; 
+    --card-bg-color: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0 40px;
+    height: 60px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav .logo {
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    padding: 20px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #34495e; 
+}
+
+.hero {
+    background: url('hero-bg.jpg') center/cover no-repeat; 
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section h2::after { 
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 15px;
+}
+
+.contact-form { 
+    max-width: 500px; 
+    margin: 30px auto 0; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: var(--radius); 
+    text-align: left; 
+    background-color: white; 
+}
+.form-group { 
+    margin-bottom: 15px; 
+}
+.form-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+.form-group input, .form-group textarea { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+.form-group textarea { 
+    resize: vertical; 
+    height: 120px; 
+}
+.form-group button { 
+    background-color: var(--secondary-color); 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 1rem; 
+    transition: background-color 0.3s; 
+}
+.form-group button:hover { 
+    background-color: #2980b9; 
+}
+
+#contact-page { background-color: #d9f2e6; }
+#sports-page { background-color: #f4f4f4; }
+#sculpture-page { background-color: #e6f0ff; }
+#courses-page { background-color: #fff2e6; }
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 20px;
+    }
+    .hero {
+        height: 40vh;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .card-grid {
+        grid-template-columns: 1fr; 
+    }
+}
